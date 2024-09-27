@@ -1,4 +1,4 @@
-import { useState } from "react";
+ import { useState } from "react";
 
 import { signupFetch } from "../../../utils/fetch";
 
@@ -28,16 +28,18 @@ const Signup = ({ setLoggedUser, setIsLoggedIn }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-   
+  
     // loginFetch goes here and replaces testLogin
     const data = await signupFetch(username, email, password);
- if (data.message === "success") {
+    
+ 
+    if (data.message === "success") {
      // setLoggedUser
      setLoggedUser(data);
      // setIsLoggedIn
      setIsLoggedIn(true);
- }
-  };
+  }
+};
 
   return (
     <div className="flex flex-column signup">

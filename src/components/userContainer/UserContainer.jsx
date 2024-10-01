@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 
+
 import UserCard from "./userCard/UserCard";
 
 import "./UserContainer.css";
+import { getAllUsersFetch } from "../../utils/fetch";
 
 // eslint-disable-next-line react/prop-types
 const UserContainer = ({ isLoggedIn }) => {
@@ -10,7 +12,8 @@ const UserContainer = ({ isLoggedIn }) => {
 
   useEffect(() => {
     async function fetchUsers() {
-      const data = await testUseEffect();
+      // change testUserEffect to getAllUsersFetch
+      const data = await getAllUsersFetch();
       console.log(data);
       await setUsers(data.users);
     }
